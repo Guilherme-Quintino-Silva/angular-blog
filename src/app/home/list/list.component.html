@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>To Do list.</h2>
+  <ul>
+  @for (user of consume$ | async; track user.id) {
+        <li>{{ user.name }}</li>
+        <li>{{ user.title }}</li>
+        <li>{{ user.linkImage }}</li>
+        <li>{{ user.description }}</li>
+    }
+  </ul>
+</div>

@@ -1,4 +1,4 @@
-export interface descriptionBlog {
+export interface DescriptionBlog {
   id: string;
   name: string;
   title: string;
