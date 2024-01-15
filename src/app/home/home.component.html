@@ -1,18 +1,18 @@
 <div class="container">
-  <form [formGroup]="listBlog" (onSubmit)="sendForm()">
+  <form [formGroup]="listBlog" (ngSubmit)="sendForm()">
     <div class="row">
       <h2>Insira o seu novo Blog aqui</h2>
       <div class="col-12 my-2">
-        <label for="">Digite o nome:</label>
-        <input type="text" class="form-control" formControlName="name" />
+        <label for="name">Digite o nome:</label>
+        <input id="name" type="text" class="form-control" formControlName="name" autocomplete="off" />
       </div>
       <div class="col-12 my-2">
-        <label for="">Digite o título:</label>
-        <input type="text" class="form-control" formControlName="title" />
+        <label for="title">Digite o título:</label>
+        <input id="title" type="text" class="form-control" formControlName="title" />
       </div>
       <div class="col-12 my-2">
-        <label for="">Insira o link da imagem:</label>
-        <input type="text" class="form-control" formControlName="image" />
+        <label for="image">Insira o link da imagem:</label>
+        <input id="image" type="text" class="form-control" formControlName="linkImage" />
       </div>
       <div class="col-12 my-2">
         <h4 for="blog">Digite o blog:</h4>
@@ -26,6 +26,6 @@
         ></textarea>
       </div>
     </div>
-    <button class="btn btn-dark btn-md" [disabled]="listBlog.valid">Enviar</button>
+    <input type="submit" class="btn btn-dark btn-md" value="Enviar" [disabled]="!listBlog.valid" />
   </form>
 </div>

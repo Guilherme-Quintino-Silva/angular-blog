@@ -16,4 +16,13 @@ export class ListComponent {
   constructor(private homeService: HomeService) {
     this.consume$ = this.homeService.getReturn();
   }
+
+  deleteBlog(id: any): void {
+    this.homeService.removeData(id).subscribe({
+      next: () => {
+        alert('Dados removidos com sucesso.');
+      },
+      error: (err) => console.log(err)
+    });
+  }
 }

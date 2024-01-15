@@ -1,11 +1,32 @@
 <div class="container">
   <h2>To Do list.</h2>
-  <ul>
-  @for (user of consume$ | async; track user.id) {
-        <li>{{ user.name }}</li>
-        <li>{{ user.title }}</li>
-        <li>{{ user.linkImage }}</li>
-        <li>{{ user.description }}</li>
+  <div class="row">
+    @for (user of consume$ | async; track user.id) {
+    <div class="col-2">
+      <span>
+        {{ user.name }}
+      </span>
+    </div>
+    <div class="col-3">
+      <span>
+        {{ user.title }}
+      </span>
+    </div>
+    <div class="col-2">
+      <span>
+        {{ user.linkImage }}
+      </span>
+    </div>
+    <div class="col-3">
+      <span>
+        {{ user.description }}
+      </span>
+    </div>
+    <div class="col-2">
+      <span>
+        <button (click)="deleteBlog(user.id)" class="btn btn-danger my-1">Deletar</button>
+      </span>
+    </div>
     }
-  </ul>
+  </div>
 </div>

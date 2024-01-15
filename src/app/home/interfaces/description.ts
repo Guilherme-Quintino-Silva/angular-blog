@@ -1,5 +1,5 @@
 export interface DescriptionBlog {
-  id: string;
+  id?: string;
   name: string;
   title: string;
   linkImage: string;
